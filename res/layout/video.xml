@@ -4,11 +4,11 @@
     android:layout_height="match_parent"
     android:layout_above="@+id/footer"
     android:layout_below="@+id/titlebar_container" >
-
+
     <SurfaceView
         android:id="@+id/video_remote"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="match_parent"
         android:adjustViewBounds="true"
         android:visibility="visible" />
 
@@ -64,12 +64,13 @@
             android:src="@drawable/hangup" />
 
     </RelativeLayout>
-
+
         <ListView
             android:id="@android:id/list"
             android:layout_width="match_parent"
             android:layout_height="278dp"
-            android:layout_gravity="bottom" >
+            android:layout_gravity="bottom"
+            android:background="@drawable/black_back" >
 
     </ListView>
 
