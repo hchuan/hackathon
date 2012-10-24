@@ -28,6 +28,7 @@ import android.util.Log;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -76,6 +77,7 @@ public class ViewMeActivity extends ListActivity {
 		mCameraMediaSource = new CameraMediaSource(
 				CameraMediaSource.CAMERA_FRONT, mLocalViewSurface);
 		mRemoteViewSurface = (SurfaceView) findViewById(R.id.video_remote);
+		
 		/*
 		ListView listView = (ListView) findViewById(R.id.listView1);
 		String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
