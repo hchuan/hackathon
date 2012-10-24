@@ -3,3 +3,4 @@
 *.class
 *.ap_
 *.cache
+*.DS_Store
