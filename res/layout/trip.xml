@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- When selected, you should use bg with grey -->
+    <item android:tag="Trip"
+          android:state_selected="false" />
+    <!-- When not selected, you should use bg with white -->
+    <item android:tag="Trip" />
+</selector>

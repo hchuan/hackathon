@@ -18,6 +18,10 @@ import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TabHost;
+import android.widget.TabHost.TabSpec;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class SplashActivity extends Activity {
@@ -39,6 +43,21 @@ public class SplashActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.splash);
+		
+		/*TabHost tabs = (TabHost) this.findViewById(R.id.my_tabhost);
+		tabs.setup();
+		
+		TabSpec tspec1 = tabs.newTabSpec("Birthday").setIndicator("Birthday",getResources().getDrawable(R.drawable.listbar));		
+		tspec1.setIndicator("One");
+		tspec1.setContent(R.id.content);
+		tabs.addTab(tspec1);
+		*/
+		//final TextView label = (TextView) tabs.getTabWidget().getChildAt(0).findViewById(android.R.id.title);
+		//label.setText("Birthday");
+		//final TextView label2 = (TextView) tabs.getTabWidget().getChildAt(1).findViewById(android.R.id.title);
+		//label2.setText("For the Week");
+		//final TextView label3 = (TextView) tabs.getTabWidget().getChildAt(2).findViewById(android.R.id.title);
+		//label3.setText("Trip");
 	}
 
 	public void onStart() {
@@ -167,14 +186,14 @@ public class SplashActivity extends Activity {
 
 			switch (msg.what) {
 			case MSG_CONNECTION_ONLINE:
-				((Button) SplashActivity.this
+				((ImageButton) SplashActivity.this
 						.findViewById(R.id.friendPickerButton))
 						.setEnabled(true);
 				Toast.makeText(SplashActivity.this, R.string.connection_online,
 						Toast.LENGTH_LONG).show();
 				break;
 			case MSG_CONNECTION_OFFLINE:
-				((Button) SplashActivity.this
+				((ImageButton) SplashActivity.this
 						.findViewById(R.id.friendPickerButton))
 						.setEnabled(false);
 				Toast.makeText(SplashActivity.this,
@@ -183,7 +202,7 @@ public class SplashActivity extends Activity {
 			case MSG_CONNECTION_TIMEOUT:
 				try {
 					if (!mMyProfileHelper.isOnline()) {
-						((Button) SplashActivity.this
+						((ImageButton) SplashActivity.this
 								.findViewById(R.id.friendPickerButton))
 								.setEnabled(false);
 						Toast.makeText(SplashActivity.this,
