@@ -1,6 +1,8 @@
 package jibe.sdk.demo.viewme;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import jibe.sdk.client.JibeIntents;
 import jibe.sdk.client.JibeServiceListener.ConnectFailedReason;
@@ -28,8 +30,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+import android.app.ListActivity;
 
-public class ViewMeActivity extends Activity {
+public class ViewMeActivity extends ListActivity {
 
 	private static final String TAG = ViewMeActivity.class.getSimpleName();
 
@@ -71,6 +74,7 @@ public class ViewMeActivity extends Activity {
 		mCameraMediaSource = new CameraMediaSource(
 				CameraMediaSource.CAMERA_FRONT, mLocalViewSurface);
 		mRemoteViewSurface = (SurfaceView) findViewById(R.id.video_remote);
+		/*
 		ListView listView = (ListView) findViewById(R.id.listView1);
 		String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
 		  "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
@@ -83,7 +87,10 @@ public class ViewMeActivity extends Activity {
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, values);
 
 		// Assign adapter to ListView
-		listView.setAdapter(adapter); 
+		listView.setAdapter(adapter); */
+		ArrayAdapter<Model> adapter = new InteractiveArrayAdapter(this,
+		        getModel());
+		 setListAdapter(adapter);
 
 		if (mIsSender) {
 			mChallengeReceiverDisplayName = i
@@ -108,7 +115,26 @@ public class ViewMeActivity extends Activity {
 			mVideoConnection.dispose();
 		}
 	}
-
+	
+	private List<Model> getModel() {
+	    List<Model> list = new ArrayList<Model>();
+	    list.add(get("Linux"));
+	    list.add(get("Windows7"));
+	    list.add(get("Suse"));
+	    list.add(get("Eclipse"));
+	    list.add(get("Ubuntu"));
+	    list.add(get("Solaris"));
+	    list.add(get("Android"));
+	    list.add(get("iPhone"));
+	    // Initially select one of the items
+	    list.get(1).setSelected(true);
+	    return list;
+	  }
+	
+	  private Model get(String s) {
+	    return new Model(s);
+	  }
+	  
 	private void showSenderSideDialog() {
 		mWaitingForReceiverToAcceptDialog = new ProgressDialog(
 				ViewMeActivity.this);
