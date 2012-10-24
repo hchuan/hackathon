@@ -21,20 +21,12 @@
         android:layout_marginTop="20dp"
      />
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/buttons"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" 
         android:layout_gravity="top"
         >
-
-        <Button
-            android:id="@+id/btn_camera"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:onClick="onSwitchCamClick"
-            android:text="Cam" >
-        </Button>
 
         <Button
             android:id="@+id/btn_send"
@@ -47,15 +39,40 @@
             android:visibility="gone" >
 
         </Button>
-    </LinearLayout>
 
-	<ListView
-	    android:id="@android:id/list"
-	    android:layout_width="match_parent"
-	    android:layout_height="283dp"
-	    android:layout_gravity="bottom" >
+        <ImageButton
+            android:id="@+id/btn_camera"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@null"
+            android:onClick="onSwitchCamClick"
+            android:scaleType="fitXY"
+            android:src="@drawable/camera" />
+
+        <ImageButton
+            android:id="@+id/btn_camera"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:onClick="onHangUp"
+            android:scaleType="fitXY"
+            android:src="@drawable/hangup" />
+
+    </RelativeLayout>
+
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="278dp"
+            android:layout_gravity="bottom" >
 
     </ListView>
+
 </FrameLayout>
 
     

@@ -29,6 +29,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.app.ListActivity;
 
@@ -55,6 +56,7 @@ public class ViewMeActivity extends ListActivity {
 	private CameraMediaSource mCameraMediaSource;
 
 	//@Override
+	@SuppressLint({ "NewApi", "NewApi" })
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.video);
@@ -88,6 +90,9 @@ public class ViewMeActivity extends ListActivity {
 
 		// Assign adapter to ListView
 		listView.setAdapter(adapter); */
+		//TextView myButton = (TextView) findViewById(R.id.textView1);
+		//myButton.setX(10);
+		//myButton.setY(300);
 		ArrayAdapter<Model> adapter = new InteractiveArrayAdapter(this,
 		        getModel());
 		 setListAdapter(adapter);
@@ -118,16 +123,14 @@ public class ViewMeActivity extends ListActivity {
 	
 	private List<Model> getModel() {
 	    List<Model> list = new ArrayList<Model>();
-	    list.add(get("Linux"));
-	    list.add(get("Windows7"));
-	    list.add(get("Suse"));
-	    list.add(get("Eclipse"));
-	    list.add(get("Ubuntu"));
-	    list.add(get("Solaris"));
-	    list.add(get("Android"));
-	    list.add(get("iPhone"));
+	    list.add(get("Maruchan Ramen"));
+	    list.add(get("Beer - Yuengling only!!"));
+	    list.add(get("Hand Soap"));
+	    list.add(get("OJ, Apple J"));
+	    list.add(get("Frozen Pizza"));
 	    // Initially select one of the items
-	    list.get(1).setSelected(true);
+	    list.get(0).setSelected(true);
+	    list.get(2).setSelected(true);
 	    return list;
 	  }
 	
@@ -233,6 +236,10 @@ public class ViewMeActivity extends ListActivity {
 			mCameraMediaSource.switchCamera(CameraMediaSource.CAMERA_BACK);
 		else
 			mCameraMediaSource.switchCamera(CameraMediaSource.CAMERA_FRONT);
+	}
+	
+	public void onHangUp(View view) {
+		finish();
 	}
 
 	private void sendCurrentTimestamp() {
