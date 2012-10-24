@@ -4,6 +4,6 @@
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
-	<classpathentry kind="lib" path="/Users/eileenkoo/Downloads/sample-app-sources-2/sdk-demo-viewme/libs/JibeClientSDK-2.3.2.69-stable-m.jar"/>
+	<classpathentry kind="lib" path="libs/JibeClientSDK-2.3.2.69-stable-m.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
