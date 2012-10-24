@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import jibe.sdk.demo.viewme.*;
 import jibe.sdk.client.JibeIntents;
 import jibe.sdk.client.JibeServiceListener.ConnectFailedReason;
 import jibe.sdk.client.events.JibeSessionEvent;
